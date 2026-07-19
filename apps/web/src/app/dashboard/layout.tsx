@@ -17,7 +17,8 @@ import {
   Calendar,
   Layers,
   Map,
-  Trash2
+  Trash2,
+  Bot
 } from "lucide-react";
 import Link from "next/link";
 import AIAssistant from "@/components/AIAssistant";
@@ -44,21 +45,23 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
           { name: "Digital Ticket", href: "/dashboard/fan", icon: FileText },
           { name: "Stadium Finder", href: "#", icon: Compass },
           { name: "Accessibility", href: "#", icon: Layers },
+          { name: "AI Assistant", href: "/dashboard/assistant", icon: Bot },
           { name: "Emergency Help", href: "#", icon: ShieldAlert },
         ];
       case "Volunteer":
         return [
           { name: "Assigned Work", href: "/dashboard/volunteer", icon: Calendar },
           { name: "Stadium Map", href: "#", icon: Map },
-          { name: "Translator", href: "#", icon: Compass },
+          { name: "AI Assistant", href: "/dashboard/assistant", icon: Bot },
           { name: "Report Incident", href: "#", icon: AlertOctagon },
         ];
       case "Security Officer":
       case "Medical Team":
         return [
           { name: "Emergency Command", href: "/dashboard/security", icon: ShieldAlert },
-          { name: "Incident Log", href: "#", icon: AlertOctagon },
           { name: "Sensor Matrix", href: "#", icon: Activity },
+          { name: "AI Assistant", href: "/dashboard/assistant", icon: Bot },
+          { name: "Incident Log", href: "#", icon: AlertOctagon },
         ];
       case "Administrator":
       case "Tournament Organizer":
@@ -66,6 +69,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
         return [
           { name: "Overview Analytics", href: "/dashboard/admin", icon: Activity },
           { name: "Stadium Sensors", href: "#", icon: Layers },
+          { name: "AI Assistant", href: "/dashboard/assistant", icon: Bot },
           { name: "System Log", href: "#", icon: FileText },
           { name: "Waste Management", href: "#", icon: Trash2 },
         ];
