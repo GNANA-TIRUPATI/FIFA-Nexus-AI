@@ -1,0 +1,14 @@
+fastapi
+uvicorn[standard]
+pydantic[email]
+pydantic-settings
+SQLAlchemy
+pg8000
+passlib[bcrypt]
+pyjwt
+python-multipart
+python-dotenv
+redis
+httpx
+websockets
+cryptography

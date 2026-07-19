@@ -1,0 +1,49 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Next.js build output
+apps/web/.next/
+apps/web/out/
+
+# Python virtual environment
+apps/api/.venv/
+apps/api/__pycache__/
+apps/api/**/__pycache__/
+apps/api/**/*.pyc
+apps/api/*.db
+apps/api/*.sqlite3
+
+# Environment files (contain secrets - DO NOT commit)
+.env
+.env.local
+.env.production
+.env.development
+apps/api/.env
+apps/web/.env.local
+apps/web/.env.production
+
+# Database
+*.db
+*.sqlite3
+fifa_nexus.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Test coverage
+coverage/
+
+# Build artifacts
+dist/
+build/
