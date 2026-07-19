@@ -86,7 +86,7 @@ export default function AssistantPage() {
       id: "welcome",
       role: "model",
       text: "Hello! I am your FIFA Nexus AI Tactical Assistant. Ask me how to optimize player formations, counter specific strategies, or visualize dynamic pitch positioning on the grid.",
-      timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+      timestamp: ""
     }
   ]);
   const [input, setInput] = useState("");
@@ -96,6 +96,15 @@ export default function AssistantPage() {
   const [activeFormationTab, setActiveFormationTab] = useState<"both" | "attack" | "defense">("both");
   
   const chatEndRef = useRef<HTMLDivElement>(null);
+
+  // Set local timestamp after client-side mount to avoid React hydration mismatches
+  useEffect(() => {
+    setMessages(prev => prev.map(msg => 
+      msg.id === "welcome" 
+        ? { ...msg, timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) } 
+        : msg
+    ));
+  }, []);
 
   useEffect(() => {
     chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
