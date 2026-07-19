@@ -30,7 +30,14 @@ If you don't know the answer, tell them to contact nearest volunteer. Answer con
 def get_simulated_ai_response(query: str) -> str:
     """Fallback stadium expert system if Gemini API key is invalid or unconfigured."""
     q = query.lower()
-    if "gate 5" in q:
+    if "counter" in q or "4-2-3-1" in q or "formation" in q:
+        return (
+            "To counter a narrow 4-2-3-1 formation, we recommend transitioning to a robust 4-3-3 counter system (as plotted on your interactive live session pitch). Key instructions:\n"
+            "1. Use overlapping fullbacks (like Robertson) to exploit spaces on the flanks.\n"
+            "2. Instruct your Defensive Midfielder (Endo) to tightly mark the central CAM and intercept passing lanes.\n"
+            "3. Have inverted wingers (like Salah) cut inside to drag their fullbacks and create space."
+        )
+    elif "gate 5" in q:
         return "Gate 5 is the main northern entrance. It is located right outside the MetLife Metro Transit station and includes accessible wheelchair ramps."
     elif "gate 1" in q:
         return "Gate 1 is the southern entrance, closest to Parking Lot A/B and the designated Taxi pickup zone."
